@@ -14,13 +14,9 @@ const renderMessage = function () {
     .split('');
   const sum = dateArr.reduce((acc, el) => acc + Number(el), 0);
 
-  if (sum % number === 0) {
-    message.innerHTML = `Your birthday is lucky 🥳`;
-    // body.insertAdjacentHTML('beforeend', );
-  } else {
-    message.innerHTML = `Birthday not lucky 😢`;
-    // body.insertAdjacentHTML('beforeend', div);
-  }
+  sum % number === 0
+    ? (message.innerHTML = `Your birthday is lucky 🥳`)
+    : (message.innerHTML = `Birthday not lucky 😢`);
 };
 
 btn.addEventListener('click', renderMessage);
